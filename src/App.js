@@ -2,39 +2,10 @@ import React, { Component } from 'react';
 import { Table } from 'antd';
 import './App.css';
 
-import SearchBox from './components/searchBox'
-
-function GetData(params) {
-  return new Promise((resolve, reject) => {
-    resolve({
-      code: 0,
-      data: {
-        list: [
-          { name: '张三1' },
-          { name: '张三2' },
-          { name: '张三3' },
-          { name: '张三4' },
-          { name: '张三5' },
-        ]
-      }
-    })
-  })
-}
-
-function GetSelect() {
-  return new Promise((resolve, reject) => {
-    resolve({
-      code: 0,
-      data: {
-        list: [
-          { value: 1, label: '坐席1' },
-          { value: 2, label: '坐席2' },
-          { value: 3, label: '坐席3' },
-        ]
-      }
-    })
-  })
-}
+import SearchBox from './components/searchBox' //搜索框组件
+import Menu from './components/menu' //菜单
+import { GetData, GetSelect } from './request/normal'
+import { GetMenu } from './request/user'
 
 class App extends Component {
   constructor(props) {
@@ -61,16 +32,17 @@ class App extends Component {
 
     return (
       <div className="App">
-        <SearchBox
-          name
-          nameText="姓名"
-          rangeDate
-          dateText="选择日期"
-          select={ select }
-          selectText="请选择坐席数"
-          onSearch={ this.search.bind(this) }
-          reset
-        />
+        {/*<SearchBox*/}
+          {/*name*/}
+          {/*nameText="姓名"*/}
+          {/*rangeDate*/}
+          {/*dateText="选择日期"*/}
+          {/*select={ select }*/}
+          {/*selectText="请选择坐席数"*/}
+          {/*onSearch={ this.search.bind(this) }*/}
+          {/*reset*/}
+        {/*/>*/}
+        <Menu />
       </div>
     );
   }
