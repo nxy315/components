@@ -23,7 +23,7 @@ export function GetMenu(params) {
             {
               parent: 2,
               name: '充值',
-              route: '/home'
+              route: '/recharge'
             },
             {
               parent: 2,
